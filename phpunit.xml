@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    bootstrap="core/app.php"
+    cacheDirectory=".phpunit.cache"
+    executionOrder="depends,defects"
+    requireCoverageMetadata="false"
+    beStrictAboutCoverageMetadata="true"
+    beStrictAboutOutputDuringTests="true"
+    displayDetailsOnPhpunitDeprecations="true"
+    failOnPhpunitDeprecation="true"
+    failOnRisky="true"
+    failOnWarning="true">
+    <php>
+        <env name="DB_NAME" value="test_project_test" />
+        <env name="DB_USER" value="root" />
+        <env name="DB_PASS" value="" />
+        <env name="DB_HOST" value="localhost" />
+    </php>
+    <testsuites>
+        <testsuite name="default">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
+        <include>
+            <directory>src</directory>
+        </include>
+    </source>
+</phpunit>
